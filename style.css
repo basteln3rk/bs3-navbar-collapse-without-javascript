@@ -5,3 +5,16 @@ body {
 .navbar-static-top {
   margin-bottom: 19px;
 }
+
+
+/* bs3: mobile navbar without js custom
+ * ------------------------------------
+ * show the collapse when navbar toggle is checked */
+#navbar-toggle-cbox:checked ~ .collapse {
+	display: block;
+}
+
+/* the checkbox used only internally; don't display it */
+#navbar-toggle-cbox {
+  display:none
+}

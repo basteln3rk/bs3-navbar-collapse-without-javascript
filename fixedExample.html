@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./favicon.ico">
+
+    <title>Fixed Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+	
+	
+.navbar-custom	{
+height: 50px;
+}
+	
+        body {
+            min-height: 1500px;
+        }
+	
+        .navbar-fixed-top + div.main {
+            margin-top: 53px;
+        }
+
+        /* show the collapse when navbar toggle is checked */
+        #navbar-toggle-cbox:checked ~ .collapse {
+            display: block;			
+        }
+
+        /* the checkbox used only internally; don't display it */
+        #navbar-toggle-cbox {
+            display: none;
+        }
+
+.custom-dropdown .divider,
+.custom-dropdown .custom-dropdown-panel .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+
+
+
+@media only screen and (max-width: 600px)  {
+	   .navbar-collapse{
+		overflow-x:hidden;
+		overflow-y:auto;
+		background-color: #f8f8f8;
+		}
+}
+	
+/* Drawer toggle */
+.custom-dropdown {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  margin: 1em;
+  color: rgb(119, 119, 119);
+  transition: color .3s ease-out;
+}
+
+/* Drawer toggle - icon */
+.custom-dropdown:before {
+  content: '▼';
+  position: absolute;
+  right: -15px;
+}
+
+/* Drawer toggle - expanded */
+.custom-dropdown-value:checked + .custom-dropdown {
+  color: rgb(100, 149, 237);
+}
+
+/* Drawer toggle - expanded - icon */
+.custom-dropdown-value:checked + .custom-dropdown:before {
+  content: '▲';
+   right: -15px;
+}
+
+
+/* Hidden checkbox to enable CSS-only drawers */
+.custom-dropdown-value {
+  display: none;
+}
+
+/* Drawer content */
+.custom-dropdown-comment {
+  position: relative;
+  color: black;
+  cursor: initial;
+  opacity: 0;
+  font-size: 0;
+  transform: translateY(16px);
+
+  /* Closing animation */
+  transition: opacity .3s ease-out,
+              transform .3s ease-out,
+              font-size .2s .31s ease-out;
+}
+
+
+/* Drawer content - expanded */
+.custom-dropdown-value:checked + .custom-dropdown > .custom-dropdown-panel > .custom-dropdown-comment {
+  opacity: 1;
+  font-size: 16px;
+  transform: translateY(0);
+  
+  /* Opening animation */
+  transition: opacity .2s .28s ease-out,
+              transform .5s ease-out,
+              font-size .3s ease-out;
+}
+
+
+.custom-dropdown-value:checked + .custom-dropdown > .custom-dropdown-panel{
+padding:15px;
+background-color: #f8f8f8;
+border: 1px solid #c1c1c1;
+border-radius: 3px;
+}
+
+.dropdown-header{
+display:none;
+}
+
+.custom-dropdown-value:checked +.custom-dropdown .dropdown-header,
+.custom-dropdown-value:checked +.custom-dropdown .custom-dropdown-panel > .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #777;
+  white-space: nowrap;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- bs3: mobile navbar expand collapse without javascript custom
+          ---------------------------------------------------------------
+          insert checkbox
+          change the "hamburger" icon from being a button to a label for checkbox
+        --->
+        <input type="checkbox" id="navbar-toggle-cbox">
+        <div class="navbar-header">
+            <label for="navbar-toggle-cbox" class="navbar-toggle collapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </label>
+            <!-- customization ends here -->
+            <a class="navbar-brand" href="javascript:void(0)">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="javascript:void(0)">Home</a></li>
+                <li><a href="javascript:void(0)">About</a></li>
+                <li><a href="javascript:void(0)">Contact</a></li>
+                <li>
+				<input id="dr-001" type="checkbox" class="custom-dropdown-value">
+<label for="dr-001" class="custom-dropdown">Dropdown 
+<div class="custom-dropdown-panel">
+  <div class="custom-dropdown-comment"><p>Comment for article ID 50</p></div>  
+  <div class="custom-dropdown-comment"><a href="javascript:void(0)">Action</a></div>
+  <div class="custom-dropdown-comment"><a href="javascript:void(0)">Another action</a></div>
+  <div class="custom-dropdown-comment"><a href="javascript:void(0)">Something else here</a></div>
+  <div class="divider"></div>
+  <div class="dropdown-header">Nav header</div>
+    <div class="custom-dropdown-comment"><a href="javascript:void(0)">Separated link</a></div>
+    <div class="custom-dropdown-comment"><a href="javascript:void(0)">One more separated link</a></div>
+	</div>
+</label>
+				
+				
+				</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0)">Default</a></li>
+                <li><a href="javascript:void(0)">Static top</a></li>
+                <li class="active"><a href="javascript:void(0)">Fixed top <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container main">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It
+            includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="javascript:void(0)" role="button">View navbar docs &raquo;</a>
+        </p>
+    </div>
+
+</div> <!-- /container -->
+
+</body>
+</html>
